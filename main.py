@@ -16,13 +16,7 @@ for i in ignore:
     os_dir.remove(i)
 new_dir = os_dir.copy()
 
-all_destinations = []
 for dir in os_dir:
-    all_destinations.append(str(cwd.joinpath(dir)))
+    with open(dir+f"/{dir.lower()}.py", "w") as script:
+        script.write(classes.format(name=dir))
 
-for each_path in all_destinations:
-    print(each_path)
-    with open("", "w") as script:
-        pass
-
-print(all_destinations)
